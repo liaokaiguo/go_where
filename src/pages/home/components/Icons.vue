@@ -1,12 +1,12 @@
 <template>
   <div class="icons">
-    <swiper>
+    <swiper :options="swiperOption">
       <swiper-slide v-for="(page, index) of pages" :key="index">
         <div class="icon" v-for="item of page" :key="item.id">
           <div class="icon-img">
             <img class="icon-img-content" :src="item.imgUrl">
           </div>
-          <p class="icon-desc">{{item.dec}}</p>
+          <p class="icon-desc">{{item.desc}}</p>
         </div>
       </swiper-slide>
     </swiper>
@@ -16,51 +16,20 @@
 <script>
 	export default {
 		name: "HomeIcons",
+    props:{
+		  list:Array
+    },
     data(){
 			return{
-				iconList:[{
-					id:'0001',
-          imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-          dec:'景点门票景点门票景点门票'
-        },{
-          id:'0002',
-          imgUrl:'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png' ,
-          dec:'嘉兴必游'
-		    },{
-          id:'0003',
-          imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/50/26ffa31b56646402.png',
-          dec:'亲子游'
-        },{
-          id:'0004',
-          imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/20/831d62d2e1c7be02.png',
-          dec:'名胜古迹'
-        },{
-          id:'0005',
-          imgUrl:'http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png',
-          dec:'一日游'
-        },{
-          id:'0006',
-          imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/67/9a1678221b8e0e02.png',
-          dec:'古镇'
-        },{
-          id:'0007',
-          imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/e3/67df61427c8e1302.png',
-          dec:'杭州宋城'
-        },{
-          id:'0008',
-          imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/b1/528a9e80403b8c02.png',
-          dec:'欢乐谷'
-        },{
-          id:'0009',
-          imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/b1/528a9e80403b8c02.png',
-          dec:'雪谷'
-        }]
+        swiperOption:{
+        	autoplay:false
+        }
       }
-    },
+    } ,
     computed:{
 			pages(){
 				const pages = []
-        this.iconList.forEach((item,index) =>{
+        this.list.forEach((item,index) =>{
         	const  page = Math.floor(index /8)
           if(!pages[page]){
           	pages[page] = []
