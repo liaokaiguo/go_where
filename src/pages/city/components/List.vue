@@ -64,7 +64,7 @@
   .list
     overflow :hidden
     position :absolute
-    top:2.77rem
+    top:1.54rem
     left:0
     right :0
     bottom :0
