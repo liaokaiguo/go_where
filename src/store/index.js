@@ -13,10 +13,10 @@ export default new Vuex.Store({
     }
   },
   mutations:mutations,
-  getters:{
-    doubleCity(state){
-      return state.city + ' ' + state.city
-    }
-  }
+  // getters:{
+  //   doubleCity(state){
+  //     return state.city + ' ' + state.city
+  //   }
+  // }
 })
 

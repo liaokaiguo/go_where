@@ -8,7 +8,7 @@
       输入城市/景点/游玩主题</div>
     <router-link to="/City">
       <div class="header-right">
-        {{this.doubleCity}}
+        {{this.city}}
         <span class="iconfont arrow-icon">&#xe64a;</span>
       </div>
     </router-link>
@@ -23,7 +23,7 @@
 		name: "HomeHeader",
     computed:{
 			...mapState(['city']),
-      ...mapGetters(['doubleCity'])
+      // ...mapGetters(['doubleCity'])
     }
 	}
 </script>
