@@ -32,6 +32,10 @@
     activated() {
 			window.addEventListener('scroll',this.handleScroll)
     },
+    deactivated(){
+			// 解绑window事件
+			window.removeEventListener('scroll',this.handleScroll)
+    },
     methods:{
 			handleScroll(){
 				const top = document.documentElement.scrollTop
