@@ -5,7 +5,9 @@
         v-model="keyword"
         class="search-input"
         type="text"
-        placeholder="输入城市名或拼音">
+        placeholder="输入城市名或拼音"
+        onfocus="this.placeholder=''"
+        onblur="this.placeholder='输入城市名或者拼音'">
     </div>
     <div class="search-content"
          v-show="keyword"
@@ -73,6 +75,7 @@
 	    handleCityClick(city){
 	      // this.$store.dispatch('changeCity',city)
 	      this.changeCity(city)
+        this.keyword = ''
 	      this.$router.push('/')
       },
 	    ...mapMutations(['changeCity'])
